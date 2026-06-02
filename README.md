@@ -25,14 +25,23 @@ This repository is an index, not a product monorepo. It keeps public evidence, d
 
 ## Selected case studies
 
-Case studies will be expanded as each public surface is polished and verified:
+Start with [`case-studies/`](case-studies/) for the reading guide.
 
-- [`case-studies/`](case-studies/) — reading guide and planned case-study index.
-- Obscura browser-runtime fix — exact PR evidence, runtime failure mode, tests, and constraints.
-- Hermes Agent Telegram/gateway work — my work in a fork, with upstream attribution and exact commit evidence.
-- Go OpenRouter SDK work — fork status, LLM API feature areas, and exact commit evidence.
-- Sanitized private-production workflow — no private code, credentials, logs, domains, or user data.
-- Linux/Kubuntu automation runbook — practical systems debugging and recovery automation.
+- [Obscura browser-runtime fix](case-studies/obscura-browser-runtime-fix.md) — exact PR evidence, runtime failure mode, tests, and constraints.
+- [Hermes Agent Telegram/gateway work](case-studies/hermes-telegram-gateway.md) — my work in a fork, with upstream attribution and exact commit evidence.
+- [Go OpenRouter SDK work](case-studies/go-openrouter-llm-sdk.md) — fork status, LLM API feature areas, and exact commit evidence.
+- [Sanitized private-production workflow](case-studies/positions-agentic-workflow.md) — no private code, credentials, logs, domains, or user data.
+- [Linux/Kubuntu automation runbook](case-studies/linux-kubuntu-tweaks-runbook.md) — practical systems debugging and recovery automation.
+
+## Workflows and manual docs
+
+- [AI-assisted PR loop](workflows/ai-assisted-pr-loop.md)
+- [Task-package template](workflows/task-package-template.md)
+- [Verification checklist](workflows/verification-checklist.md)
+- [Pinned repositories checklist](docs/manual/pinned-repos-checklist.md)
+- [Profile consistency check](docs/manual/profile-consistency-check.md)
+- [Final public-surface review](docs/reviews/final-public-surface-review.md)
+- [GitHub portfolio final report](docs/final/github-portfolio-final-report.md)
 
 ## How I work
 

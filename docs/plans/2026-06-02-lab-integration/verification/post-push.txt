@@ -1,0 +1,10 @@
+## final post-push
+docs/plans/2026-06-02-lab-integration/verification/gh-evidence.txt:46: new blank line at EOF.
+checked 24 markdown files; local links OK
+-e92faf1ae4448563ef38b0cf08f5455ed673a51d submodules/go-openrouter
+-32d3f0449fc9187078fca99b002c694b67bdbd0e submodules/hermes-agent
+-33d120c6c1a828f411454109d95f56d0b0d5f7a4 submodules/linux-kubuntu-tweaks
+-b336a2b342913b680d4c6e1d2db951123ff969f4 submodules/pi-codex
+{"baseRefName":"main","headRefName":"slice-6-lab-integration","isDraft":true,"number":1,"state":"OPEN","url":"https://github.com/blockedby/agentic-engineering-lab/pull/1"}
+## slice-6-lab-integration...origin/slice-6-lab-integration
+?? docs/plans/2026-06-02-lab-integration/verification/post-push.txt
