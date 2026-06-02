@@ -1,0 +1,46 @@
+## git diff --check
+status:0
+## file existence
+OK workflows/ai-assisted-pr-loop.md
+OK workflows/task-package-template.md
+OK workflows/verification-checklist.md
+OK case-studies/README.md
+OK case-studies/obscura-browser-runtime-fix.md
+OK case-studies/hermes-telegram-gateway.md
+OK case-studies/go-openrouter-llm-sdk.md
+OK case-studies/positions-agentic-workflow.md
+OK case-studies/linux-kubuntu-tweaks-runbook.md
+OK docs/manual/pinned-repos-checklist.md
+OK docs/manual/profile-consistency-check.md
+OK docs/reviews/final-public-surface-review.md
+OK docs/final/github-portfolio-final-report.md
+## safety scan
+docs/README.md:12:Private repositories must not be made public, linked as public evidence, or added as submodules.
+workflows/README.md:9:Public workflow docs must not include secrets, raw logs, private repository URLs, credentials, private endpoints, cookies, chat IDs, or real user data.
+README.md:33:- [Sanitized private-production workflow](case-studies/positions-agentic-workflow.md) — no private code, credentials, logs, domains, or user data.
+README.md:79:Only public repositories belong here. Private repositories must not be made public or added as submodules.
+README.md:83:- No secrets, tokens, cookies, credentials, raw logs, chat IDs, webhook URLs, private endpoints, or real user data.
+README.md:84:- No private repositories are published or linked as public evidence.
+## submodules
+-e92faf1ae4448563ef38b0cf08f5455ed673a51d submodules/go-openrouter
+-32d3f0449fc9187078fca99b002c694b67bdbd0e submodules/hermes-agent
+-33d120c6c1a828f411454109d95f56d0b0d5f7a4 submodules/linux-kubuntu-tweaks
+-b336a2b342913b680d4c6e1d2db951123ff969f4 submodules/pi-codex
+## status
+## slice-6-lab-integration...origin/main
+ M README.md
+ M case-studies/README.md
+ M docs/README.md
+ M workflows/README.md
+?? case-studies/go-openrouter-llm-sdk.md
+?? case-studies/hermes-telegram-gateway.md
+?? case-studies/linux-kubuntu-tweaks-runbook.md
+?? case-studies/obscura-browser-runtime-fix.md
+?? case-studies/positions-agentic-workflow.md
+?? docs/final/
+?? docs/manual/
+?? docs/plans/2026-06-02-lab-integration/
+?? docs/reviews/
+?? workflows/ai-assisted-pr-loop.md
+?? workflows/task-package-template.md
+?? workflows/verification-checklist.md
