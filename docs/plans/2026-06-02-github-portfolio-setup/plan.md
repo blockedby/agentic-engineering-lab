@@ -76,3 +76,10 @@ Executor: aad-implementer (or no-op report if already satisfied).
 
 ## Execution ledger
 - 2026-06-02: Created remote/local lab repo via `gh repo create`; wrote initial task package and plan.
+
+## Final slice evidence
+- Lab remote: `https://github.com/blockedby/agentic-engineering-lab`, public, default branch `main`.
+- Lab commit: `e7938d5 Create public portfolio hub scaffold` pushed to `origin/main`.
+- Profile README required no edit; link to lab now resolves because the public repo exists.
+- Verification evidence: `verification/local.md`.
+- Done-state: Slice 1 accepted by owner based on local/remote verification, with no unresolved blockers.

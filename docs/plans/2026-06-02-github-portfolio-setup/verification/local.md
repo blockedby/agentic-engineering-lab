@@ -14,3 +14,12 @@
 ## Profile repo status
 
 `/home/kcnc/code/blockedby` remains unchanged. Existing untracked `profile-check.png` remains uncommitted.
+
+## Post-push verification
+
+- Commit pushed: `e7938d5 Create public portfolio hub scaffold`.
+- `gh repo edit blockedby/agentic-engineering-lab --default-branch main` succeeded or was already effective.
+- `gh repo view blockedby/agentic-engineering-lab --json nameWithOwner,visibility,isPrivate,url,defaultBranchRef` — passed; default branch is `main`, visibility `PUBLIC`, `isPrivate=false`.
+- `git diff --check HEAD` in lab repo — passed with no output.
+- `git status --short --branch` in lab repo — clean on `main...origin/main`.
+- `/home/kcnc/code/blockedby` status remains `main...origin/main` with only untracked `profile-check.png`.
