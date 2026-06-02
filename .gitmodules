@@ -1,0 +1,12 @@
+[submodule "submodules/pi-codex"]
+	path = submodules/pi-codex
+	url = https://github.com/blockedby/pi-codex.git
+[submodule "submodules/go-openrouter"]
+	path = submodules/go-openrouter
+	url = https://github.com/blockedby/go-openrouter.git
+[submodule "submodules/hermes-agent"]
+	path = submodules/hermes-agent
+	url = https://github.com/blockedby/hermes-agent.git
+[submodule "submodules/linux-kubuntu-tweaks"]
+	path = submodules/linux-kubuntu-tweaks
+	url = https://github.com/blockedby/linux-kubuntu-tweaks.git
