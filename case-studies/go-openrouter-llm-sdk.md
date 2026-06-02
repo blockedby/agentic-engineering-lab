@@ -6,7 +6,8 @@ This case study covers public fork/contribution work around the Go OpenRouter SD
 
 Public evidence:
 
-- Fork PR: https://github.com/blockedby/go-openrouter/pull/1
+- Merged fork PR: https://github.com/blockedby/go-openrouter/pull/1
+- Fork merge commit: https://github.com/blockedby/go-openrouter/commit/b9d174eea9384915a72cc741215f11f377bba853
 - Upstream PR: https://github.com/reVrost/go-openrouter/pull/50
 - Upstream merged commit: https://github.com/reVrost/go-openrouter/commit/016ba045a0facdd208102c9f25c8fc9515771e92
 - Fork branch commit: https://github.com/blockedby/go-openrouter/commit/8251ecf
@@ -27,7 +28,7 @@ Slice 4 verification recorded:
 - `gh pr list --repo reVrost/go-openrouter --author blockedby --state all` showed PR #50 as merged.
 - `git diff --check origin/main..HEAD` passed.
 - Safety/overclaim scan of the added attribution section passed; broad scan false positives were pre-existing upstream README examples such as API-key instructions.
-- Current PR evidence on 2026-06-02: `gh pr view 1 -R blockedby/go-openrouter` returned state `OPEN`, head `portfolio-readme-attribution`.
+- Current PR evidence on 2026-06-02: `gh pr view 1 -R blockedby/go-openrouter` returned state `MERGED`, merge commit `b9d174eea9384915a72cc741215f11f377bba853`.
 
 ## Why this matters
 

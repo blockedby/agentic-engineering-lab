@@ -6,7 +6,8 @@ Public repo: https://github.com/blockedby/linux-kubuntu-tweaks. Slice 5 sanitize
 
 Evidence:
 
-- PR #1: https://github.com/blockedby/linux-kubuntu-tweaks/pull/1
+- Merged PR #1: https://github.com/blockedby/linux-kubuntu-tweaks/pull/1
+- Merge commit: https://github.com/blockedby/linux-kubuntu-tweaks/commit/c031146b5177944209c50a9522f3d65df2f97cbb; safety hotfix https://github.com/blockedby/linux-kubuntu-tweaks/commit/1fb9935ff2c9032929a7b41927c3524378f52873
 - Branch: `portfolio-linux-sanitization`
 - Latest slice commit: `1e4e70e`
 - Main implementation commit: `b28e981`
@@ -26,7 +27,7 @@ Slice 5 verification recorded:
 - Final README scan for private IP patterns, token/cookie/secret wording, `--private`, and forbidden public phrase passed with no matches.
 - `git diff --check` passed.
 - `git status --short --branch` was clean on `portfolio-linux-sanitization...origin/portfolio-linux-sanitization`.
-- Current PR evidence on 2026-06-02: `gh pr view 1 -R blockedby/linux-kubuntu-tweaks` returned state `OPEN`.
+- Current PR evidence on 2026-06-02: `gh pr view 1 -R blockedby/linux-kubuntu-tweaks` returned state `MERGED`, merge commit `c031146b5177944209c50a9522f3d65df2f97cbb`; safety hotfix `1fb9935ff2c9032929a7b41927c3524378f52873`.
 
 ## Why this matters
 

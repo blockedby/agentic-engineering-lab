@@ -1,0 +1,15 @@
+Root post-merge integration verification, 2026-06-02
+
+- Merged lab PR #1: https://github.com/blockedby/agentic-engineering-lab/pull/1 -> 78ed726a47c56a46c6b90f5ac67ee9740760f8b5
+- Merged pi-codex PR #1: https://github.com/blockedby/pi-codex/pull/1 -> 768a5a7ce770788d9dda609e11b3a856410e70d6
+- Merged go-openrouter PR #1: https://github.com/blockedby/go-openrouter/pull/1 -> b9d174eea9384915a72cc741215f11f377bba853
+- Merged linux-kubuntu-tweaks PR #1: https://github.com/blockedby/linux-kubuntu-tweaks/pull/1 -> c031146b5177944209c50a9522f3d65df2f97cbb
+- Linux public-safety hotfix: https://github.com/blockedby/linux-kubuntu-tweaks/commit/1fb9935ff2c9032929a7b41927c3524378f52873
+- Merged Hermes Agent attribution PR #23: https://github.com/blockedby/hermes-agent/pull/23 -> 53e6fbdb8e8401ff3fcc30393e84706469b190b2
+
+Fresh root checks:
+- local markdown links excluding submodules: passed (`local markdown links OK`).
+- git diff --check: passed.
+- prohibited public phrase scan across profile, lab, pi-codex, go-openrouter, linux-kubuntu-tweaks, hermes-agent excluding .git/node_modules/target: passed, no matches.
+- lab secret/private/overclaim scan: no blockers; only safety-rule wording matches.
+- git submodule status updated to current public repo commits listed above.
