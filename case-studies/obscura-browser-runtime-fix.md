@@ -1,23 +1,61 @@
-# Obscura browser-runtime proposal
+# Obscura browser runtime — bounded JavaScript execution
 
-## Summary
+**Public evidence:** [`5c63894 — Fix bounded full-load script execution`](https://github.com/blockedby/obscura/commit/5c638945f520d47da367dc04db66abb8460a08e4)
 
-Public OSS pull request: https://github.com/h4ckf0r0day/obscura/pull/195. A fresh GitHub API check on 2026-08-18 reports PR #195 as **CLOSED without merge**. It was titled `Fix bounded full-load script execution`, authored by `blockedby`, and proposed against upstream `main` from `blockedby/obscura:fix-bounded-full-load-scripts`.
+This case study covers work in my public Obscura fork. Obscura itself is an upstream project maintained by `h4ckf0r0day`; the implementation described here is limited to the linked fork commit.
 
-## Problem
+## The failure mode
 
-The proposal targeted browser-runtime behavior around bounded full-load script execution. The risk area was script/event-loop behavior: automation code needs to execute page-load scripts without hanging, skipping needed work, or letting unbounded execution break the browser flow.
+A browser can report a document as loaded only after it has processed several kinds of JavaScript work: parser-blocking scripts, deferred scripts, async scripts, lifecycle events, and queued event-loop tasks.
 
-## Proposed solution
+The problematic case was deceptively small:
 
-The branch contains a bounded runtime change and regression coverage. It is a public proposal against the upstream Obscura project, not an ownership claim over Obscura and not a merged upstream feature. The recorded head commit is [`5c63894`](https://github.com/blockedby/obscura/commit/5c638945f520d47da367dc04db66abb8460a08e4).
+```js
+while (true) {}
+```
 
-## Verification
+A compact busy loop could monopolize V8 during full-load navigation. An outer asynchronous timeout was not enough because the JavaScript engine itself remained blocked. Navigation could hang before later scripts ran, and simply abandoning the future did not guarantee that the runtime was usable afterward.
 
-- `gh api repos/h4ckf0r0day/obscura/pulls/195` on 2026-08-18 returned `state=closed`, `merged_at=null`, and the same head SHA.
-- The PR title and head branch remain publicly inspectable at the linked pull request.
-- This lab case study does not publish local build artifacts, raw logs, `.pi/`, or `target/` output from the working clone.
+## Engineering approach
 
-## Why this remains useful evidence
+The change makes bounded execution an explicit runtime property rather than a caller-side hope:
 
-Although the PR was not merged, it is a small, reviewable example of reasoning about browser automation at the runtime boundary: event-loop constraints, bounded execution, and regression design. Its outcome is stated explicitly rather than presented as an accepted upstream contribution.
+1. **Guard every page script.** Small scripts use the same V8 watchdog as larger scripts, because source length says nothing about execution time.
+2. **Bound event-loop execution inside the runtime.** A watchdog uses V8's thread-safe isolate handle to terminate execution when the configured deadline expires.
+3. **Recover after termination.** The runtime cancels the termination state and executes a small reset step so later JavaScript can still run.
+4. **Use the bounded path during navigation.** Load-event dispatch and page event-loop polling call the guarded runtime methods instead of relying only on outer Tokio timeouts.
+5. **Keep the policy configurable.** `OBSCURA_SCRIPT_TIMEOUT_MS` can override the default one-second script deadline while rejecting zero as an invalid bound.
+
+## Regression evidence
+
+The commit adds two complementary levels of proof.
+
+### Runtime recovery test
+
+A focused Rust test:
+
+- starts a compact infinite loop through `execute_script_guarded`;
+- requires the call to return within a bounded interval;
+- confirms that code before termination ran;
+- executes another script afterward;
+- verifies that the same runtime remains usable.
+
+This checks both interruption and recovery—the important invariant is not merely "the timeout fired," but "the browser can continue."
+
+### Full-load browser fixture
+
+A local integration fixture combines:
+
+- an inline initializer;
+- a compact parser-blocking busy loop;
+- a later script that schedules zero-delay work;
+- deferred and async scripts;
+- full-load navigation with an overall five-second bound.
+
+The test records script invocation order and verifies that every expected script is reached without navigation hanging. The fixture runs through a local ephemeral HTTP listener, keeping the regression deterministic and self-contained.
+
+## Why this matters
+
+Agent-facing browsers routinely encounter third-party JavaScript they do not control. Reliability requires more than wrapping work in a generic timeout: the execution limit must reach the JavaScript engine, termination must be reversible, and the surrounding browser lifecycle must use the bounded API consistently.
+
+The linked commit is a compact example of that pattern: reproduce the engine-level failure, move the bound to the correct layer, recover the runtime, and prove the complete navigation path with deterministic tests.
