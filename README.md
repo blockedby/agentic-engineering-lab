@@ -51,13 +51,13 @@ Standalone skills add specialized workflows: [`code-review`](https://github.com/
 | Systems automation | [`blockedby/vibe-practicum-vpn`](https://github.com/blockedby/vibe-practicum-vpn) | Public-safe Linux/KDE VPN and routing tooling, container test labs, guarded operations, and redacted diagnostics. |
 | LLM SDK work | [`blockedby/go-openrouter`](https://github.com/blockedby/go-openrouter) | Fork/contribution work around a Go OpenRouter SDK, with upstream attribution. |
 | Linux automation | [`blockedby/linux-kubuntu-tweaks`](https://github.com/blockedby/linux-kubuntu-tweaks) | Personal Linux/Kubuntu automation and recovery runbook; environment-specific rather than a packaged product. |
-| Browser runtime | [Bounded JavaScript execution commit](https://github.com/blockedby/obscura/commit/5c638945f520d47da367dc04db66abb8460a08e4) | Rust browser-runtime work adding V8 watchdogs, recoverable event-loop timeouts, and deterministic full-load regression coverage. |
+| Browser runtime | [Upstream Obscura commit](https://github.com/h4ckf0r0day/obscura/commit/6dd1e4e65f5b91c58a2bf85d584aadf31f4eab6a) | Merged Rust/CDP contribution attributed to `blockedby`: promise settling, DOM event and navigation side effects, click-submit parity, and end-to-end regression coverage. |
 
 ## Selected case studies
 
 Start with [`case-studies/`](case-studies/) for the reading guide.
 
-- [Obscura bounded JavaScript execution](case-studies/obscura-browser-runtime-fix.md) — engine-level failure mode, V8 termination and recovery, and deterministic full-load regression evidence.
+- [Obscura CDP click and navigation parity](case-studies/obscura-browser-runtime-fix.md) — upstream contribution connecting promise evaluation, DOM events, JavaScript navigation, and real click-submit regression coverage.
 - [Go OpenRouter SDK work](case-studies/go-openrouter-llm-sdk.md) — fork status, LLM API feature areas, and exact commit evidence.
 - [Sanitized private-production workflow](case-studies/positions-agentic-workflow.md) — workflow patterns without private code, credentials, logs, domains, or user data.
 - [Linux/Kubuntu automation runbook](case-studies/linux-kubuntu-tweaks-runbook.md) — practical systems debugging and recovery automation.

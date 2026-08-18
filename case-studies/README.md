@@ -5,7 +5,7 @@ Recommended reading order for public review:
 | Order | Case study | Signal |
 |---:|---|---|
 | 1 | [AI-assisted PR loop](../workflows/ai-assisted-pr-loop.md) | Shows the operating model used across the portfolio work. |
-| 2 | [Obscura bounded JavaScript execution](obscura-browser-runtime-fix.md) | Rust/V8 watchdog, runtime recovery, and deterministic full-load regression design. |
+| 2 | [Obscura CDP click and navigation parity](obscura-browser-runtime-fix.md) | Merged upstream contribution spanning promise settling, DOM events, navigation side effects, and CDP regression coverage. |
 | 3 | [Go OpenRouter LLM SDK](go-openrouter-llm-sdk.md) | Go/LLM SDK contribution and fork attribution. |
 | 4 | [Sanitized agentic workflow](positions-agentic-workflow.md) | Private-production workflow pattern with sensitive details removed. |
 | 5 | [Linux/Kubuntu tweaks runbook](linux-kubuntu-tweaks-runbook.md) | Practical systems automation and public-safety sanitization. |
