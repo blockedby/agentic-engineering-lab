@@ -1,82 +1,95 @@
 # Agentic Engineering Lab
 
-Public portfolio hub for applied AI engineering, agentic developer tooling, OSS contributions, and sanitized production engineering case studies by Alexander Longov (`blockedby`).
+Public portfolio hub for applied AI engineering, agent tooling, reusable skills, OSS contributions, and sanitized production engineering case studies by `blockedby`.
 
-This repository is an index, not a product monorepo. It keeps public evidence, documentation, and optional links to related public repositories in one place.
+This repository is an index, not a product monorepo. The active work lives in the linked public repositories; this lab provides a concise map of the tools, operating model, and supporting evidence.
 
-## Focus areas
+## Current focus
 
-- Agentic developer tooling and bounded coding-agent workflows
-- Deterministic evidence collection with LLM-assisted summarization
-- Backend systems in Go and TypeScript/Node.js
-- Production debugging, observability, CI/CD, and deployment automation
-- Practical Linux and systems automation
-- OSS fork work and contributions with clear upstream attribution
+- Isolated Pi/Pipi environments and coding-agent runtime integration
+- Multi-model delegation across Pi, Codex, Claude, Luna, and Terra
+- Reusable Agent Skills for review, browser work, planning, and verification
+- Deterministic evidence collection with bounded LLM-assisted interpretation
+- Dependency-aware GitHub planning and conflict-safe parallel work
+- Backend, Linux, browser-runtime, and operational automation
 
-## Public work
+## Current agent toolkit
+
+| Project | What it demonstrates |
+|---|---|
+| [`blockedby/my-pi-setup`](https://github.com/blockedby/my-pi-setup) | **Pipi**, my current isolated Pi environment: pinned runtime, separate state, subagent profiles, parallel workflows, background terminals, browser/Codex integration, and reusable skills. Maintained as a public fork of [`davis7dotsh/my-pi-setup`](https://github.com/davis7dotsh/my-pi-setup). |
+| [`blockedby/plan-gh-backlog`](https://github.com/blockedby/plan-gh-backlog) | Agent Skill and Python CLI for validating roadmap structure, planning dependency-ready batches, and safely publishing idempotent GitHub issue backlogs. |
+| [`blockedby/gpt5.6-reviewer`](https://github.com/blockedby/gpt5.6-reviewer) | Evidence-driven code-review contracts, routing, closure semantics, CLI validation, and a reusable review skill. |
+| [`blockedby/pi-codex`](https://github.com/blockedby/pi-codex) | Deterministic web search/fetch plus bounded Codex summarization, patch handling, and delegated coding tools for Pi. |
+| [`blockedby/browser-chrome-skill`](https://github.com/blockedby/browser-chrome-skill) | Portable Chrome DevTools skill with disposable headless sessions and an explicit persistent-browser boundary. |
+
+Pipi composes the working environment around these capabilities: scoped implementation and audit agents, eight-way workflow fan-out, long-running background terminals, `fd`/`rg` discovery, ask-user interactions, browser MCP servers, and Codex/Claude/Pi delegation. The individual repositories keep each tool or skill inspectable and independently reusable.
+
+## Reusable Agent Skills
+
+The public [`skills/general`](https://github.com/blockedby/pi-agent-setup/tree/main/skills/general) collection contains the reusable engineering layer behind these workflows:
+
+| Skill | Purpose |
+|---|---|
+| [`backend-quality`](https://github.com/blockedby/pi-agent-setup/tree/main/skills/general/backend-quality) | Backend, API, storage, validation, auth, idempotency, and data-safety evidence. |
+| [`frontend-quality`](https://github.com/blockedby/pi-agent-setup/tree/main/skills/general/frontend-quality) | Frontend implementation and UI-quality checks. |
+| [`devops-quality`](https://github.com/blockedby/pi-agent-setup/tree/main/skills/general/devops-quality) | Configuration, CI, container, deployment, and runtime readiness. |
+| [`visual-composition`](https://github.com/blockedby/pi-agent-setup/tree/main/skills/general/visual-composition) | Product-quality hierarchy, responsive composition, complete states, and interaction polish. |
+| [`completion-verification`](https://github.com/blockedby/pi-agent-setup/tree/main/skills/general/completion-verification) | Fresh acceptance evidence before readiness or completion claims. |
+| [`git-branching`](https://github.com/blockedby/pi-agent-setup/tree/main/skills/general/git-branching) | Safe PR-first branches, worktrees, rebases, and target synchronization. |
+| [`browser-chrome`](https://github.com/blockedby/browser-chrome-skill) | Controlled persistent and disposable Chrome automation. |
+| [`explanatory-html-pages`](https://github.com/blockedby/pi-agent-setup/tree/main/skills/general/explanatory-html-pages) | Self-contained technical explainers with readable diagrams. |
+| [`modern-skill-revising`](https://github.com/blockedby/pi-agent-setup/tree/main/skills/general/modern-skill-revising) | Focused context and instruction design for modern models. |
+
+Standalone skills add specialized workflows: [`code-review`](https://github.com/blockedby/gpt5.6-reviewer/tree/main/skills/code-review) provides evidence-driven review and closure contracts, while [`plan-gh-backlog`](https://github.com/blockedby/plan-gh-backlog) validates and publishes dependency-aware GitHub backlogs.
+
+## Additional public work
 
 | Area | Public target | Notes |
 |---|---|---|
-| AI tooling | [`blockedby/pi-codex`](https://github.com/blockedby/pi-codex) | Pi extension exposing Codex CLI through bounded tools for search/fetch, patch handling, and delegated coding tasks. |
-| LLM SDK work | [`blockedby/go-openrouter`](https://github.com/blockedby/go-openrouter) | Fork work around a Go OpenRouter SDK; public materials should describe this as fork work, not original upstream authorship. |
-| Agent gateway work | [`blockedby/hermes-agent`](https://github.com/blockedby/hermes-agent) | Fork/work around Hermes Agent gateway behavior; public materials should attribute the upstream Hermes Agent maintainers. |
-| Systems automation | [`blockedby/linux-kubuntu-tweaks`](https://github.com/blockedby/linux-kubuntu-tweaks) | Personal Linux/Kubuntu automation and recovery runbook; environment-specific, not a packaged product. |
-| OSS contribution | [Obscura PR #195](https://github.com/h4ckf0r0day/obscura/pull/195) | Browser-runtime contribution with bounded script/event-loop execution and regression tests. |
+| Voice tooling | [`blockedby/kwispr`](https://github.com/blockedby/kwispr) | Actively developed fork of [`MaksBoi/kwispr`](https://github.com/MaksBoi/kwispr): Wayland/KDE dictation with cloud, OpenRouter, and local/offline STT, plus a Rust inference runtime and native desktop integration. |
+| Systems automation | [`blockedby/vibe-practicum-vpn`](https://github.com/blockedby/vibe-practicum-vpn) | Public-safe Linux/KDE VPN and routing tooling, container test labs, guarded operations, and redacted diagnostics. |
+| LLM SDK work | [`blockedby/go-openrouter`](https://github.com/blockedby/go-openrouter) | Fork/contribution work around a Go OpenRouter SDK, with upstream attribution. |
+| Linux automation | [`blockedby/linux-kubuntu-tweaks`](https://github.com/blockedby/linux-kubuntu-tweaks) | Personal Linux/Kubuntu automation and recovery runbook; environment-specific rather than a packaged product. |
+| Browser runtime | [Upstream Obscura commit](https://github.com/h4ckf0r0day/obscura/commit/6dd1e4e65f5b91c58a2bf85d584aadf31f4eab6a) | Merged Rust/CDP contribution attributed to `blockedby`: promise settling, DOM event and navigation side effects, click-submit parity, and end-to-end regression coverage. |
 
 ## Selected case studies
 
 Start with [`case-studies/`](case-studies/) for the reading guide.
 
-- [Obscura browser-runtime fix](case-studies/obscura-browser-runtime-fix.md) — exact PR evidence, runtime failure mode, tests, and constraints.
-- [Hermes Agent Telegram/gateway work](case-studies/hermes-telegram-gateway.md) — my work in a fork, with upstream attribution and exact commit evidence.
+- [Obscura CDP click and navigation parity](case-studies/obscura-browser-runtime-fix.md) — upstream contribution connecting promise evaluation, DOM events, JavaScript navigation, and real click-submit regression coverage.
 - [Go OpenRouter SDK work](case-studies/go-openrouter-llm-sdk.md) — fork status, LLM API feature areas, and exact commit evidence.
-- [Sanitized private-production workflow](case-studies/positions-agentic-workflow.md) — no private code, credentials, logs, domains, or user data.
+- [Sanitized private-production workflow](case-studies/positions-agentic-workflow.md) — workflow patterns without private code, credentials, logs, domains, or user data.
 - [Linux/Kubuntu automation runbook](case-studies/linux-kubuntu-tweaks-runbook.md) — practical systems debugging and recovery automation.
 
-## Workflows and manual docs
+## Workflow references
 
 - [AI-assisted PR loop](workflows/ai-assisted-pr-loop.md)
 - [Task-package template](workflows/task-package-template.md)
 - [Verification checklist](workflows/verification-checklist.md)
 - [Pinned repositories checklist](docs/manual/pinned-repos-checklist.md)
 - [Profile consistency check](docs/manual/profile-consistency-check.md)
-- [Final public-surface review](docs/reviews/final-public-surface-review.md)
-- [GitHub portfolio final report](docs/final/github-portfolio-final-report.md)
 
 ## How I work
 
 I use agents as engineering tools, not as unchecked decision makers:
 
 1. define the problem, constraints, and acceptance criteria;
-2. split work into bounded slices with clear ownership;
-3. use exploration agents for repo evidence and implementation agents for scoped changes;
+2. split work into bounded slices with explicit ownership and dependencies;
+3. route exploration, implementation, and audit to the appropriate tool or model;
 4. keep deterministic evidence separate from model summaries or opinions;
 5. verify with tests, builds, static checks, browser evidence, or explicit manual checks;
-6. write down what changed, why it changed, and what remains risky.
+6. record what changed, why it changed, and what remains risky.
 
 ## Optional public submodules
 
-The `submodules/` directory contains optional references to confirmed public GitHub repositories. They are provided for convenient technical review; they are not vendored source and they are not ownership claims over upstream projects.
-
-Clone with submodules:
+The `submodules/` directory contains optional references to selected public repositories. They are convenient review links, not vendored source or ownership claims over upstream projects.
 
 ```bash
 git clone --recurse-submodules https://github.com/blockedby/agentic-engineering-lab.git
 ```
 
-Or initialize after cloning:
-
-```bash
-git submodule update --init --recursive
-```
-
-Refresh submodules later:
-
-```bash
-git submodule update --remote --merge
-```
-
-Only public repositories belong here. Private repositories must not be made public or added as submodules.
+Only public repositories belong here. Private repositories must not be published or added as submodules.
 
 ## Public-safety rules
 
