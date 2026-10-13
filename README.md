@@ -27,7 +27,7 @@ Pipi composes the working environment around these capabilities: scoped implemen
 
 ## Reusable Agent Skills
 
-The public [`skills/general`](https://github.com/blockedby/pi-agent-setup/tree/main/skills/general) collection contains the reusable engineering layer behind these workflows:
+The public [`skills/general`](https://github.com/blockedby/pi-agent-setup/tree/main/skills/general) collection and standalone repositories contain the reusable engineering layer behind these workflows:
 
 | Skill | Purpose |
 |---|---|
@@ -36,12 +36,18 @@ The public [`skills/general`](https://github.com/blockedby/pi-agent-setup/tree/m
 | [`devops-quality`](https://github.com/blockedby/pi-agent-setup/tree/main/skills/general/devops-quality) | Configuration, CI, container, deployment, and runtime readiness. |
 | [`visual-composition`](https://github.com/blockedby/pi-agent-setup/tree/main/skills/general/visual-composition) | Product-quality hierarchy, responsive composition, complete states, and interaction polish. |
 | [`completion-verification`](https://github.com/blockedby/pi-agent-setup/tree/main/skills/general/completion-verification) | Fresh acceptance evidence before readiness or completion claims. |
-| [`git-branching`](https://github.com/blockedby/pi-agent-setup/tree/main/skills/general/git-branching) | Safe PR-first branches, worktrees, rebases, and target synchronization. |
+| [`git-branching`](https://github.com/blockedby/git-branching-skill) | Standalone skills.sh package for safe PR-first branches, worktrees, rebases, and target synchronization. |
 | [`browser-chrome`](https://github.com/blockedby/browser-chrome-skill) | Controlled persistent and disposable Chrome automation. |
 | [`explanatory-html-pages`](https://github.com/blockedby/pi-agent-setup/tree/main/skills/general/explanatory-html-pages) | Self-contained technical explainers with readable diagrams. |
 | [`modern-skill-revising`](https://github.com/blockedby/pi-agent-setup/tree/main/skills/general/modern-skill-revising) | Focused context and instruction design for modern models. |
 
 Standalone skills add specialized workflows: [`code-review`](https://github.com/blockedby/gpt5.6-reviewer/tree/main/skills/code-review) provides evidence-driven review and closure contracts, while [`plan-gh-backlog`](https://github.com/blockedby/plan-gh-backlog) validates and publishes dependency-aware GitHub backlogs.
+
+Install [`git-branching` through skills.sh](https://skills.sh/blockedby/git-branching-skill/git-branching):
+
+```sh
+npx skills add blockedby/git-branching-skill
+```
 
 ## Additional public work
 
